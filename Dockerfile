@@ -51,7 +51,7 @@ RUN apt-get -y update -qq && apt-get -y install \
 
 RUN mkdir -p /ffmpeg_installation
 
-RUN cd /ffmpeg_installation && git clone git://source.ffmpeg.org/ffmpeg.git ffmpeg && cd ffmpeg && git reset --hard f7fd205f11d5299d6a16b0ff0ae85fddb32772f2 && ./configure --prefix=/ && make ffmpeg && make install
+RUN cd /ffmpeg_installation && git clone git://source.ffmpeg.org/ffmpeg.git ffmpeg && cd ffmpeg && git reset --hard f7fd205f11d5299d6a16b0ff0ae85fddb32772f2 
 
 # Copy in the files from the current folder (recursively). These are the modified files of our custom installation
 COPY . /ffmpeg_installation
